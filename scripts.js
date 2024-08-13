@@ -16,3 +16,14 @@ const myObserver = new IntersectionObserver((entries) => {
 const elements = document.querySelectorAll('.animation')
 
 elements.forEach((element) => myObserver.observe(element))
+
+let isMenuVisible = false;
+
+const menuContent = document.querySelector('header');
+const menuToggle = menuContent.querySelector('.menu-toggle');
+
+// Alterna a visibilidade do menu ao clicar no botão de toggle
+menuToggle.addEventListener('click', () => {
+    isMenuVisible = !isMenuVisible;
+    menuContent.classList.toggle('on', isMenuVisible);
+});
